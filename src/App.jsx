@@ -7,7 +7,7 @@ import tum from "./assets/images/Tum Tak.jpg";
 import awara from "./assets/images/Awara.jpg";
 import co2 from "./assets/images/CO2.jpg";
 import ikkudi from "./assets/images/Ik Kudi.jpg";
-import levitating from "./assets/images/levitating.jpg";
+import levitating from "./assets/images/Levitating.jpg";
 import sweater from "./assets/images/Sweater Weather.jpg";
 import ordinary from "./assets/images/Ordinary.jpg";
 import Shikayat from "./assets/images/Shikayat.jpg";
