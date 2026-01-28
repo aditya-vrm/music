@@ -2,31 +2,104 @@ import React, { useState } from "react";
 import Navbar from "./Components/navbar";
 import Card from "./Components/Card";
 
+import die from "./assets/images/die-with-smile.jpg";
+import tum from "./assets/images/Tum tak.jpg";
+import awara from "./assets/images/Awara.jpg";
+import co2 from "./assets/images/CO2.jpg";
+import ikkudi from "./assets/images/Ik Kudi.jpg";
+import levitating from "./assets/images/levitating.jpg";
+import sweater from "./assets/images/Sweater Weather.jpg";
+import ordinary from "./assets/images/ordinary.jpg";
+import Shikayat from "./assets/images/shikayat.jpg";
+import dum from "./assets/images/dum-a-dum.jpg";
+import perfect from "./assets/images/perfect.jpg";
+import blinding from "./assets/images/blinding lights.jpg";
+import heat from "./assets/images/heat waves.jpg"; 
+import believer from "./assets/images/believer.jpg";
+import kesariya from "./assets/images/kesariya.jpg";
+import pasoori from "./assets/images/pasoori.jpg";
+import night from "./assets/images/night changes.jpg";
+import counting from "./assets/images/counting stars.jpg";
+import closer from "./assets/images/closer.jpg";
+import senorita from "./assets/images/senorita.jpg";
+import apna from "./assets/images/apna bana le.jpg";
+import until from "./assets/images/until i found you.jpg";
+import lett from "./assets/images/let me down slowly.jpg";
+import tera from "./assets/images/tera yaar hoon main.jpg";
+import photograph from "./assets/images/photograph.jpg";
+import shivers from "./assets/images/shivers.jpg";
+import asit from "./assets/images/as it was.jpg";
+import ratt from "./assets/images/raatan lambiyan.jpg";
+import stay from "./assets/images/stay.jpg";
+import something from "./assets/images/something just like this.jpg";
+
+
 function App(){
 
-  const data=[
+ const data = [
 
-    {image:"https://pixelframe.design/wp-content/uploads/2024/11/Lady-Gaga-and-Bruno-Mars_Die-with-a-Smile_Cover-art-large.jpg",name:"Die With Smile",artist:"Lady Gaga and Bruno Mars",add:false},
+  { image: die, name:"Die With Smile", artist:"Lady Gaga & Bruno Mars", add:false },
 
-    {image:"https://c.saavncdn.com/461/Tum-Tak-Hindi-2013-20200704132036-500x500.jpg",name:"Tum Tak",artist:"A.R.Rahman",add:false},
+  { image:tum, name:"Tum Tak", artist:"A. R. Rahman", add:false },
 
-    {image:"https://c.saavncdn.com/210/Awara-From-Dabangg-3--Hindi-2019-20191112103325-500x500.jpg",name:"Awara",artist:"Sajid-Wajid",add:false},
+  { image:awara, name:"Awara", artist:"Sajid–Wajid", add:false },
 
-    {image:"https://i.scdn.co/image/ab67616d0000b27316168e9d75e544b005bc0a0a",name:"Co2",artist:"Prateek Khuhade",add:false},
+  { image:co2, name:"CO2", artist:"Prateek Kuhad", add:false },
 
-    {image:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQrHqA2fFP9IjjkVd6FYmtsFzspLK5ERaNSPQ&s",name:"Ik Kudi",artist:"Arpit Bala",add:false},
+  { image:ikkudi, name:"Ik Kudi", artist:"Arpit Bala", add:false },
 
-    {image:"https://i1.sndcdn.com/artworks-ZGzxGZjCvoHnL6Tp-wpNgng-t1080x1080.jpg",name:"Levitating",artist:"Dua Lipa",add:false},
+  { image:levitating, name:"Levitating", artist:"Dua Lipa", add:false },
 
-    {image:"https://i.scdn.co/image/ab67616d00001e028265a736a1eb838ad5a0b921",name:"Sweather Weather",artist:" The Neighbourhood",add:false},
+  { image:sweater, name:"Sweater Weather", artist:"The Neighbourhood", add:false },
 
-    {image:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ9Rf-rHcDHFr3wF9tlM1wB9oaBh6FAbKz83w&s",name:"Ordinary",artist:"Alex Warren",add:false},
+  { image:ordinary, name:"Ordinary", artist:"Alex Warren", add:false },
 
-    {image:"https://i.scdn.co/image/ab67616d0000b2732e40b72ccc3db7bff6ddd966",name:"Shikayat",artist:"AUR",add:false},
+  { image:Shikayat, name:"Shikayat", artist:"AUR", add:false },
 
-    {image:"https://i.scdn.co/image/ab67616d0000b2730b1b3369020e7cccc766a77e",name:"Dum-a-Dum",artist:"Devu Khan",add:false},
-    
-  ]
+  { image:dum, name:"Dum-a-Dum", artist:"Devu Khan", add:false },
+
+  { image:perfect, name:"Perfect", artist:"Ed Sheeran", add:false },
+
+  { image:blinding, name:"Blinding Lights", artist:"The Weeknd", add:false },
+
+  { image:heat, name:"Heat Waves", artist:"Glass Animals", add:false },
+
+  { image:believer, name:"Believer", artist:"Imagine Dragons", add:false },
+
+  { image:kesariya, name:"Kesariya", artist:"Arijit Singh", add:false },
+
+  { image:pasoori, name:"Pasoori", artist:"Ali Sethi", add:false },
+
+  { image:night, name:"Night Changes", artist:"One Direction", add:false },
+
+  { image:counting, name:"Counting Stars", artist:"OneRepublic", add:false },
+
+  { image:closer, name:"Closer", artist:"The Chainsmokers", add:false },
+
+  { image:senorita, name:"Senorita", artist:"Shawn Mendes", add:false },
+
+  { image:apna, name:"Apna Bana Le", artist:"Arijit Singh", add:false },
+
+  { image: until, name:"Until I Found You", artist:"Stephen Sanchez", add:false },
+
+  { image: lett, name:"Let Me Down Slowly", artist:"Alec Benjamin", add:false },
+
+  { image: tera, name:"Tera Yaar Hoon Main", artist:"Arijit Singh", add:false },
+
+  { image: photograph, name:"Photograph", artist:"Ed Sheeran", add:false },
+
+  { image: shivers, name:"Shivers", artist:"Ed Sheeran", add:false },
+
+  { image: asit, name:"As It Was", artist:"Harry Styles", add:false },
+
+  { image: ratt, name:"Raatan Lambiyan", artist:"Jubin Nautiyal", add:false },
+
+  { image: stay, name:"Stay", artist:"Justin Bieber", add:false },
+
+  { image: something, name:"Something Just Like This", artist:"Coldplay", add:false }
+
+];
+
   
    const [songData , SetsongData] = useState(data);
    const handleclick=((index)=>{
@@ -41,9 +114,9 @@ function App(){
    })
 
   return(
-    <div className="w-full h-screen bg-[#121212] py-7">
+    <div className="w-full  bg-[#121212] py-7">
       <Navbar data={songData}/>
-      <div className="flex flex-wrap ml-30 my-10 gap-10">
+      <div className="flex flex-wrap ml-10 my-10 gap-10">
         {
           songData.map((obj , index)=>(
           <Card data={obj} handleclick={handleclick} index={index} key={index}/>

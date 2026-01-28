@@ -1,17 +1,67 @@
-import React from "react";  
+import React, { useState, useMemo } from "react";
+import logo from "../assets/images/listener-logo.png";
+function Navbar({ data = [] }) {
+  const [openSearch, setOpenSearch] = useState(false);
 
-function Navbar({data}) {
-    return (
-        <div className="w-full px-30 py-3  flex justify-between ">
-            <div className="flex gap-2 items-center" >
-            <img className="w-10 object-fit rounded-full " src="https://plus.unsplash.com/premium_vector-1711987689675-439d95531384?q=80&w=880&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="" />
-            <h1 className="font-bold text-white">Listener</h1>
-            </div>
-            <div className="px-4 py-2  bg-violet-600 text-white flex gap-2 rounded-md cursor-pointer"><h1 >Favourites</h1>
-                <h1>{data.filter(item=>item.add).length}</h1>
-            </div>
+  const favCount = useMemo(
+    () => data.filter(item => item.add).length,
+    [data]
+  );
+
+  return (
+    <nav className="sticky top-0 z-50 w-full px-6 md:px-12 py-4
+                    flex items-center justify-between
+                    bg-black/50 backdrop-blur-md
+                    border-b border-white/10">
+
+      <div className="flex items-center gap-3">
+        <img 
+          src={logo}
+          alt="Listener"
+          className="w-10 h-10 rounded-full object-cover ring-2 ring-violet-500"
+        />
+        <h1 className="text-xl font-bold text-white">
+          Listener
+        </h1>
+      </div>
+
+      <div className="flex items-center gap-4">
+
+        <div
+          className={`flex items-center bg-[#181818] rounded-full
+                      transition-all duration-300 overflow-hidden
+                      ${openSearch ? "w-48 px-3" : "w-10"}`}
+        >
+          <button
+            onClick={() => setOpenSearch(!openSearch)}
+            className="text-white text-lg"
+          >
+            🔍
+          </button>
+
+          <input
+            type="text"
+            placeholder="Search..."
+            className={`bg-transparent text-white outline-none
+                        ml-2 text-sm w-full
+                        ${openSearch ? "block" : "hidden"}`}
+          />
         </div>
-    )
+        
+        <button className="flex items-center gap-2 px-5 py-2 rounded-full
+                           bg-gradient-to-r from-violet-600 to-purple-600
+                           text-white font-medium
+                           hover:scale-105 transition-transform">
+          ❤️
+          <span>Favourites</span>
+          <span className="bg-white text-violet-600 px-2 py-0.5 rounded-full text-sm">
+            {favCount}
+          </span>
+        </button>
+
+      </div>
+    </nav>
+  );
 }
 
-export  default Navbar ;
+export default Navbar;
